@@ -36,53 +36,35 @@ while True:
             elif house == "G":
                 print("Thank you for your vote")
         elif choise == "D":
-             print("-------------------")
-        print("To vote for repulicans press R")
-        print("-------------------")
-        print("To vote for Democrats press D")
-        print("-------------------")
-        print("To vote for other party press O")
-        choise = input("Your choise: ")
-        choise = choise.upper(choise)
-        if choise == "R":
-            print("You want to vote for the Governorship press P")
-            print("You want to vote for the Senate press S")
-            print("You want to vote for the House press H")
-            print("You want to vote for the Governorship press G")
-            house = input("Your option: ")
-            house = house.upper(house)
-            if house == "S":
+             print("You want to vote for the Governorship press P")
+             print("You want to vote for the Senate press S")
+             print("You want to vote for the House press H")
+             print("You want to vote for the Governorship press G")
+             house = input("Your option: ")
+             house = house.upper(house)
+             if house == "S":
                 print("Thank you for your vote")
-            elif house == "P":
+             elif house == "P":
                 print("Thank you for your vote")
-            elif house == "H":
+             elif house == "H":
                 print("Thank you for your vote")
-            elif house == "G":
+             elif house == "G":
                 print("Thank you for your vote")
         elif choise == "O":
-             print("-------------------")
-        print("To vote for repulicans press R")
-        print("-------------------")
-        print("To vote for Democrats press D")
-        print("-------------------")
-        print("To vote for other party press O")
-        choise = input("Your choise: ")
-        choise = choise.upper(choise)
-        if choise == "R":
-            print("You want to vote for the Governorship press P")
-            print("You want to vote for the Senate press S")
-            print("You want to vote for the House press H")
-            print("You want to vote for the Governorship press G")
-            house = input("Your option: ")
-            house = house.upper(house)
-            if house == "S":
+             print("You want to vote for the Governorship press P")
+             print("You want to vote for the Senate press S")
+             print("You want to vote for the House press H")
+             print("You want to vote for the Governorship press G")
+             house = input("Your option: ")
+             house = house.upper(house)
+             if house == "S":
                 print("Thank you for your vote")
-            elif house == "P":
+             elif house == "P":
                 print("Thank you for your vote")
-            elif house == "H":
+             elif house == "H":
                 print("Thank you for your vote")
-            elif house == "G":
-                print("Thank you for your vote")    
+             elif house == "G":
+                print("Thank you for your vote")
             
             
     else:
