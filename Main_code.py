@@ -5,8 +5,6 @@ voter_id = [1,2,3,4,5,6,7,8]
 
 number_of_voter = len(voter_id) #this give the lengt of the list to know how many persons will vote
 
-
-
 while True:
     voter = int(input("Enter your voter id: "))
     if voter in voter_id:
