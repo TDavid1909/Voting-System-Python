@@ -3,7 +3,7 @@
 
 voter_id = [1,2,3,4,5,6,7,8]
 
-number_of_voter = len(voter_id)
+number_of_voter = len(voter_id) #this give the lengt of the list to know how many persons will vote
 
 
 
@@ -19,14 +19,14 @@ while True:
         print("-------------------")
         print("To vote for other party press O")
         choise = input("Your choise: ")
-        choise = choise.upper(choise)
+        choise = choise.upper()
         if choise == "R":
             print("You want to vote for the Governorship press P")
             print("You want to vote for the Senate press S")
             print("You want to vote for the House press H")
             print("You want to vote for the Governorship press G")
             house = input("Your option: ")
-            house = house.upper(house)
+            house = house.upper()
             if house == "S":
                 print("Thank you for your vote")
             elif house == "P":
@@ -38,10 +38,10 @@ while True:
         elif choise == "D":
              print("You want to vote for the Governorship press P")
              print("You want to vote for the Senate press S")
-             print("You want to vote for the House press H")
+             print("You want to vote for the House press H")        #For all this block we could create some functions to make it less complicated
              print("You want to vote for the Governorship press G")
              house = input("Your option: ")
-             house = house.upper(house)
+             house = house.upper()
              if house == "S":
                 print("Thank you for your vote")
              elif house == "P":
@@ -56,7 +56,7 @@ while True:
              print("You want to vote for the House press H")
              print("You want to vote for the Governorship press G")
              house = input("Your option: ")
-             house = house.upper(house)
+             house = house.upper()
              if house == "S":
                 print("Thank you for your vote")
              elif house == "P":
@@ -69,4 +69,3 @@ while True:
             
     else:
         print("You've already voted")
-        
