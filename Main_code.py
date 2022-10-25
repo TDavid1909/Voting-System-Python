@@ -43,7 +43,7 @@ while True:
              house = input("Your option: ")
              house = house.upper()
              if house == "S":
-                print("Thank you for your vote")
+                print("Thank you for your vote")    #We had to create more functions
              elif house == "P":
                 print("Thank you for your vote")
              elif house == "H":
