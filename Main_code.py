@@ -1,6 +1,4 @@
 #this is could be the main terminal but guys feel free if you want to create more
-
-
 voter_id = [1,2,3,4,5,6,7,8]
 
 number_of_voter = len(voter_id) #this give the lengt of the list to know how many persons will vote
