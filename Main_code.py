@@ -24,14 +24,14 @@ def choose():
       print("Thank you for your vote ", name)
    
 while True:
-   condition = print(input("Would you like to vote? (Yes or NO)"))
-   condition = condition.upper()
+   condition = input("Would you like to vote? (Yes or NO)")
+   condition = condition.upper() 
    if condition == "YES":
-      str(input("What's your name?"))
-      int(input("How old are you ?"))
-      if age >= 18:
-         voter = int(input("Enter your voter id: "))
-         if voter in voter_id:
+    name = str(input("What's your name?"))
+    age = int(input("How old are you ?"))
+    if age >= 18:
+        voter = int(input("Enter your voter id: "))
+        if voter in voter_id:
             print("You are a voter")
             voter_id.remove(voter)
             print("-------------------")
@@ -51,10 +51,10 @@ while True:
             elif choise == "O":
                choose()
                others = +1                        
-         else:
+        else:
             print("You have already vote!")
-      else:
+    else:
          print("You need to be more 18 years old to vote!")
    else:
-      break
+    break
    
