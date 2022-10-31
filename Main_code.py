@@ -6,6 +6,7 @@ age = int()
 democrats_votes = 0
 republicans_votes = 0 
 others = 0
+total = str(democrats_votes + republicans_votes + others) #added total
 
 def choose():
    print("You want to vote for the Governorship press P")
@@ -35,7 +36,7 @@ while True:
             print("You are a voter")
             voter_id.remove(voter)
             print("-------------------")
-            print("To vote for repulicans press R")
+            print("To vote for Republicans press R")
             print("-------------------")
             print("To vote for Democrats press D")
             print("-------------------")
@@ -44,17 +45,72 @@ while True:
             choise = choise.upper()
             if choise == "R":
                choose()
-               republicans_votes = +1
+               republicans_votes = republicans_votes+1 #added republicans to add one per input
+               print("Republican Votes: " + str(republicans_votes)) #added to show republican votes
             elif choise == "D":
                choose()
-               democrats_votes = +1
+               democrats_votes = democrats_votes+1 #added democrats to add one per input
+               print("Democrat Votes: " + str(democrats_votes)) #added to show democrate votes
             elif choise == "O":
                choose()
-               others = +1                        
+               others = others+1 #added others to add one per input
+               print("Other Votes: " + str(others)) #added to show other votes
         else:
             print("You have already vote!")
     else:
          print("You need to be more 18 years old to vote!")
    else:
     break
+   
+while True:
+   condition = choose == ("S")
+   if republicans_votes > democrats_votes and republicans_votes > others: #added conditions to compare vote count and declare winner(still work in progress)
+      print("Republicans Win")
+   elif democrats_votes > republicans_votes and democrats_votes > others:
+      print("Democrats Win")
+   elif others > democrats_votes and others > republicans_votes:
+      print("Others Win")
+   else:
+      republicans_votes == democrats_votes and republicans_votes == others and democrats_votes == others
+      print("There is a tie no clear winner at this time")
+   break
+
+while True:
+   condition = choose == ("P")
+   if republicans_votes > democrats_votes and republicans_votes > others:
+      print("Republicans Win")
+   elif democrats_votes > republicans_votes and democrats_votes > others:
+      print("Democrats Win")
+   elif others > democrats_votes and others > republicans_votes:
+      print("Others Win")
+   else:
+      republicans_votes == democrats_votes and republicans_votes == others and democrats_votes == others
+      print("There is a tie no clear winner at this time")
+   break
+
+while True:
+   condition = choose == ("H")
+   if republicans_votes > democrats_votes and republicans_votes > others:
+      print("Republicans Win")
+   elif democrats_votes > republicans_votes and democrats_votes > others:
+      print("Democrats Win")
+   elif others > democrats_votes and others > republicans_votes:
+      print("Others Win")
+   else:
+      republicans_votes == democrats_votes and republicans_votes == others and democrats_votes == others
+      print("There is a tie no clear winner at this time")
+   break
+
+while True:
+   condition = choose == ("G")
+   if republicans_votes > democrats_votes and republicans_votes > others:
+      print("Republicans Win")
+   elif democrats_votes > republicans_votes and democrats_votes > others:
+      print("Democrats Win")
+   elif others > democrats_votes and others > republicans_votes:
+      print("Others Win")
+   else:
+      republicans_votes == democrats_votes and republicans_votes == others and democrats_votes == others
+      print("There is a tie no clear winner at this time")
+   break
    
