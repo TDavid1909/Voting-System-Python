@@ -7,21 +7,27 @@ democrats_votes = 0
 republicans_votes = 0 
 others = 0
 total = str(democrats_votes + republicans_votes + others) #added total
+senators_vote = 0
+governor_vote = 0 #variable used to define all the houeses
+house_vote = 0
 
 def choose():
-   print("You want to vote for the Governorship press P")
+   global senators_vote
+   global governor_vote
+   global house_vote
    print("You want to vote for the Senate press S")
    print("You want to vote for the House press H")
    print("You want to vote for the Governorship press G")
    house = input("Your option: ")
    house = house.upper()
    if house == "S":
+      senators_vote = +1
       print("Thank you for your vote ", name)   #This is the function that run the nice part of the elections
-   elif house == "P":
-      print("Thank you for your vote ", name)
    elif house == "H":
+      house_vote = +1
       print("Thank you for your vote ", name)
    elif house == "G":
+      governor_vote = +1
       print("Thank you for your vote ", name)
    
 while True:
@@ -44,17 +50,17 @@ while True:
             choise = input("Your choise: ")
             choise = choise.upper()
             if choise == "R":
-               choose()
                republicans_votes = republicans_votes+1 #added republicans to add one per input
-               print("Republican Votes: " + str(republicans_votes)) #added to show republican votes
+               print("Republican Votes: " + str(republicans_votes))#added to show republican votes
+               choose()
             elif choise == "D":
-               choose()
                democrats_votes = democrats_votes+1 #added democrats to add one per input
-               print("Democrat Votes: " + str(democrats_votes)) #added to show democrate votes
-            elif choise == "O":
+               print("Democrat Votes: " + str(democrats_votes))#added to show democrate votes
                choose()
+            elif choise == "O":
                others = others+1 #added others to add one per input
                print("Other Votes: " + str(others)) #added to show other votes
+               choose()
         else:
             print("You have already vote!")
     else:
@@ -62,55 +68,35 @@ while True:
    else:
     break
    
-while True:
-   condition = choose == ("S")
-   if republicans_votes > democrats_votes and republicans_votes > others: #added conditions to compare vote count and declare winner(still work in progress)
-      print("Republicans Win")
-   elif democrats_votes > republicans_votes and democrats_votes > others:
-      print("Democrats Win")
-   elif others > democrats_votes and others > republicans_votes:
-      print("Others Win")
-   else:
-      republicans_votes == democrats_votes and republicans_votes == others and democrats_votes == others
-      print("There is a tie no clear winner at this time")
-   break
+print("-----------------------------------")
+print("Total Voter: ", number_of_voter)
+print("-----------------------------------")
+print("Democrats votes: ", democrats_votes)
+print("-----------------------------------")
+print("Republicans votes: ", republicans_votes)
+print("-----------------------------------")
+print(others)
+print("-----------------------------------")
 
-while True:
-   condition = choose == ("P")
-   if republicans_votes > democrats_votes and republicans_votes > others:
-      print("Republicans Win")
-   elif democrats_votes > republicans_votes and democrats_votes > others:
-      print("Democrats Win")
-   elif others > democrats_votes and others > republicans_votes:
-      print("Others Win")
-   else:
-      republicans_votes == democrats_votes and republicans_votes == others and democrats_votes == others
-      print("There is a tie no clear winner at this time")
-   break
+if democrats_votes > republicans_votes and democrats_votes > others:
+   print("The democrats had won the elections!!")
+elif republicans_votes > democrats_votes and republicans_votes > others: #Main section of the elections of who wins
+   print("The republicans had won the election!!")
+elif others > democrats_votes and others > republicans_votes:
+   print("Others had won the elections!!!")
+else:
+   print("There is not a clear winner!")
 
-while True:
-   condition = choose == ("H")
-   if republicans_votes > democrats_votes and republicans_votes > others:
-      print("Republicans Win")
-   elif democrats_votes > republicans_votes and democrats_votes > others:
-      print("Democrats Win")
-   elif others > democrats_votes and others > republicans_votes:
-      print("Others Win")
-   else:
-      republicans_votes == democrats_votes and republicans_votes == others and democrats_votes == others
-      print("There is a tie no clear winner at this time")
-   break
+print("-----------------------------------")   
+print("-----------------------------------")
+print("Senate Votes: ", senators_vote)
+print("-----------------------------------")
+print("House Voters: ", house_vote)
+print("-----------------------------------")
+print("Governorship Votes: ", governor_vote)
+print("-----------------------------------")
+print("-----------------------------------")
 
-while True:
-   condition = choose == ("G")
-   if republicans_votes > democrats_votes and republicans_votes > others:
-      print("Republicans Win")
-   elif democrats_votes > republicans_votes and democrats_votes > others:
-      print("Democrats Win")
-   elif others > democrats_votes and others > republicans_votes:
-      print("Others Win")
-   else:
-      republicans_votes == democrats_votes and republicans_votes == others and democrats_votes == others
-      print("There is a tie no clear winner at this time")
-   break
+
+
    
