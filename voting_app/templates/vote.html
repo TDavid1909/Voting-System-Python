@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cast Your Vote</title>
+</head>
+<body>
+    <h2>Hello {{ name }}, cast your vote</h2>
+
+    <form action="/submit_vote" method="POST">
+        <h3>Choose a Party</h3>
+        <input type="radio" name="party" value="D" required> Democrat<br>
+        <input type="radio" name="party" value="R"> Republican<br>
+        <input type="radio" name="party" value="O"> Other<br><br>
+
+        <h3>Choose a Race</h3>
+        <input type="radio" name="house" value="S" required> Senate<br>
+        <input type="radio" name="house" value="H"> House<br>
+        <input type="radio" name="house" value="G"> Governorship<br><br>
+
+        <button type="submit">Submit Vote</button>
+    </form>
+</body>
+</html>
