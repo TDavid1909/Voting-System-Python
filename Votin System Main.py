@@ -1,112 +1,104 @@
-#this is could be the main terminal but guys feel free if you want to create more
-voter_id = [1,2,3,4,5,6,7,8]
-name = str()
-age = int()
-democrats_votes = 0
-republicans_votes = 0 
-others = 0
-total = str(democrats_votes + republicans_votes + others) #added total
-senators_vote = 0
-governor_vote = 0 #variable used to define all the houeses
-house_vote = 0
+voter_ids = {1,2,3,4,5,6,7,8}
 
-def choose():
-   global senators_vote
-   global governor_vote
-   global house_vote
-   print("-----------------------------------")
-   print("You want to vote for the Senate press S")
-   print("-----------------------------------")
-   print("You want to vote for the House press H")
-   print("-----------------------------------")
-   print("You want to vote for the Governorship press G")
-   print("-----------------------------------")
-   house = input("Your option: ")
-   house = house.upper()
-   if house == "S":
-      senators_vote = +1
-      print("Thank you for your vote ", name)   #This is the function that run the nice part of the elections
-   elif house == "H":
-      house_vote = +1
-      print("Thank you for your vote ", name)
-   elif house == "G":
-      governor_vote = +1
-      print("Thank you for your vote ", name)
-   
-while True:
-   print("Would you like to vote? (Yes or NO)")
-   condition = input()
-   condition = condition.upper() 
-   if condition == "YES":
-    name = str(input("What's your name?"))
+dem_votes = 0
+rep_votes = 0
+other_votes = 0
+
+senate_votes = 0
+house_votes = 0
+governor_votes = 0
+
+
+def choose_house(name):
+    global senate_votes, house_votes, governor_votes
+
     print("-----------------------------------")
-    age = int(input("How old are you ?"))
-    if age >= 18:
-        voter = int(input("Enter your voter id: "))
-        if voter in voter_id:
-            print("You are a voter")
-            voter_id.remove(voter)
-            print("-------------------")
-            print("To vote for Republicans press R")
-            print("-------------------")
-            print("To vote for Democrats press D")
-            print("-------------------")
-            print("To vote for other party press O")
-            choise = input("Your choise: ")
-            choise = choise.upper()
-            if choise == "R":
-               republicans_votes = republicans_votes+1 #added republicans to add one per input
-               print("Republican Votes: " + str(republicans_votes))#added to show republican votes
-               print("-----------------------------------")
-               choose()
-            elif choise == "D":
-               democrats_votes = democrats_votes+1 #added democrats to add one per input
-               print("Democrat Votes: " + str(democrats_votes))#added to show democrate votes
-               print("-----------------------------------")
-               choose()
-            elif choise == "O":
-               others = others+1 #added others to add one per input
-               print("Other Votes: " + str(others)) #added to show other votes
-               print("-----------------------------------")
-               choose()
-        else:
-           print("-----------------------------------")
-           print("You have already vote!")
-           print("-----------------------------------")
+    print("Vote for Senate: S")
+    print("Vote for House: H")
+    print("Vote for Governorship: G")
+    print("-----------------------------------")
+
+    option = input("Your option: ").upper()
+
+    if option == "S":
+        senate_votes += 1
+    elif option == "H":
+        house_votes += 1
+    elif option == "G":
+        governor_votes += 1
     else:
-      print("-----------------------------------") 
-      print("You need to be more 18 years old to vote!")
-      print("-----------------------------------")
-   else:
-    break
-number_of_voter = len(voter_id) #this give the lengt of the list to know how many persons will vote
-print("-----------------------------------")   
+        print("Invalid option.")
+        return choose_house(name)
+
+    print(f"Thank you for your vote, {name}!")
+
+
+while True:
+    condition = input("Would you like to vote? (Yes or No): ").upper()
+
+    if condition != "YES":
+        break
+
+    name = input("What's your name? ")
+    age = int(input("How old are you? "))
+
+    if age < 18:
+        print("You must be at least 18 years old to vote.")
+        continue
+
+    voter = int(input("Enter your voter ID: "))
+
+    if voter not in voter_ids:
+        print("You have already voted or ID is invalid.")
+        continue
+
+    voter_ids.remove(voter)
+
+    print("-------------------")
+    print("Vote Republican: R")
+    print("Vote Democrat: D")
+    print("Vote Other: O")
+    print("-------------------")
+
+    choice = input("Your choice: ").upper()
+
+    if choice == "R":
+        rep_votes += 1
+        print("Republican vote recorded.")
+    elif choice == "D":
+        dem_votes += 1
+        print("Democrat vote recorded.")
+    elif choice == "O":
+        other_votes += 1
+        print("Other vote recorded.")
+    else:
+        print("Invalid choice.")
+        continue
+
+    choose_house(name)
+
+
+# Final Results
 print("-----------------------------------")
-print("Total Voter: ", number_of_voter)
+print("Total Remaining Voters:", len(voter_ids))
 print("-----------------------------------")
-print("Democrats votes: ", democrats_votes)
-print("-----------------------------------")
-print("Republicans votes: ", republicans_votes)
-print("-----------------------------------")
-print("Others votes:", others)
-print("-----------------------------------")
+print("Democrat Votes:", dem_votes)
+print("Republican Votes:", rep_votes)
+print("Other Votes:", other_votes)
 print("-----------------------------------")
 
-if democrats_votes > republicans_votes and democrats_votes > others:
-   print("The democrats had won the elections!!")
-elif republicans_votes > democrats_votes and republicans_votes > others: #Main section of the elections of who wins
-   print("The republicans had won the election!!")
-elif others > democrats_votes and others > republicans_votes:
-   print("Others had won the elections!!!")
+# Winner (classroom simulation only)
+if dem_votes > rep_votes and dem_votes > other_votes:
+    print("Democrats received the most votes.")
+elif rep_votes > dem_votes and rep_votes > other_votes:
+    print("Republicans received the most votes.")
+elif other_votes > dem_votes and other_votes > rep_votes:
+    print("Other party received the most votes.")
 else:
-   print("There is not a clear winner!!")
+    print("No clear winner.")
 
-print("-----------------------------------")   
 print("-----------------------------------")
-print("Senate Votes: ", senators_vote)
-print("-----------------------------------")
-print("House Voters: ", house_vote)
-print("-----------------------------------")
-print("Governorship Votes: ", governor_vote)
-print("-----------------------------------")
+print("Senate Votes:", senate_votes)
+print("House Votes:", house_votes)
+print("Governorship Votes:", governor_votes)
 print("-----------------------------------")
